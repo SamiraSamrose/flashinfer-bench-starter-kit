@@ -1,0 +1,9 @@
+[solution]
+name = "optimized-triton-v1"
+# fused_moe | dsa_topk_indexer_fp8_h64_d128_topk2048_ps64 | dsa_sparse_attention_h16_ckv512_kpe64_topk2048_ps64 | gdn_decode_qk16_v32_d128_k_last | gdn_prefill_qk16_v32_d128_k_last
+definition = "fused_moe"
+author = "team-name"
+
+[build]
+language = "triton"               # triton | cuda
+entry_point = "kernel.py::kernel" # path::function
